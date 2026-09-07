@@ -1,0 +1,43 @@
+<h1>Свяжитесь с нами</h1>
+
+<p>Мы всегда рады обратной связи. Вы можете написать нам любым удобным способом.</p>
+
+<% if (successMessage) { %>
+    <div style="background: #d1fae5; padding: 1rem; border-radius: 8px; margin: 1rem 0; border-left: 4px solid #10b981;">
+        ✅ <%= successMessage %>
+    </div>
+<% } %>
+
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin: 1.5rem 0;">
+
+    <!-- Контактная информация -->
+    <div style="background: #fff; padding: 1.8rem; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.06);">
+        <h3>📋 Контактная информация</h3>
+        <p><strong>📧 Email:</strong> <a href="mailto:info@mysite.ru">info@mysite.ru</a></p>
+        <p><strong>📞 Телефон:</strong> <a href="tel:+79991234567">+7 (999) 123-45-67</a></p>
+        <p><strong>📍 Адрес:</strong> г. Москва, ул. Примерная, д. 1</p>
+        <p><strong>🕐 Часы работы:</strong> Пн-Пт: 10:00–19:00</p>
+    </div>
+
+    <!-- Форма обратной связи -->
+    <div style="background: #fff; padding: 1.8rem; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.06);">
+        <h3>✉️ Напишите нам</h3>
+        <form action="/contact" method="POST">
+            <div style="margin-bottom: 1rem;">
+                <label for="name" style="display: block; font-weight: 500; margin-bottom: 0.3rem;">Ваше имя</label>
+                <input type="text" id="name" name="name" required style="width: 100%; padding: 0.6rem; border: 1px solid #ddd; border-radius: 6px;" />
+            </div>
+            <div style="margin-bottom: 1rem;">
+                <label for="email" style="display: block; font-weight: 500; margin-bottom: 0.3rem;">Email</label>
+                <input type="email" id="email" name="email" required style="width: 100%; padding: 0.6rem; border: 1px solid #ddd; border-radius: 6px;" />
+            </div>
+            <div style="margin-bottom: 1rem;">
+                <label for="message" style="display: block; font-weight: 500; margin-bottom: 0.3rem;">Сообщение</label>
+                <textarea id="message" name="message" rows="4" required style="width: 100%; padding: 0.6rem; border: 1px solid #ddd; border-radius: 6px;"></textarea>
+            </div>
+            <button type="submit" style="background: #3b82f6; color: #fff; border: none; padding: 0.6rem 1.8rem; border-radius: 6px; cursor: pointer; font-size: 1rem;">
+                Отправить
+            </button>
+        </form>
+    </div>
+</div>
